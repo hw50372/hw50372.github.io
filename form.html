@@ -16,13 +16,13 @@ function sendJSON(){
               
             // Creating a XHR object
             let xhr = new XMLHttpRequest();
-            let url = "https://webhook.site/3326ab49-7ac9-47f4-bb32-4026f257277c";
+            let url = "https://prod-08.uksouth.logic.azure.com:443/workflows/e355444b1d5f4112ba444c2a8248ff86/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rfBSgsHg5o_r54wZOEPEMHo2Ff1FqADiA7fy2Zs9Cd8&email="+email.value;
        
             // open a connection
-            xhr.open("POST", url, true);
+            xhr.open("GET", url, true);
  
             // Set the request header i.e. which type of content you are sending
-            xhr.setRequestHeader("Content-Type", "application/json");
+            //xhr.setRequestHeader("Content-Type", "application/json");
  
             // Create a state change callback
             xhr.onreadystatechange = function () {
