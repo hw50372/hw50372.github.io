@@ -53,12 +53,15 @@ function sendJSON(){
             // Sending data with the request
             xhr.send(data);
         }
+window.onload = function(){
+    document.querySelector('#email').innerHTML += findGetParameter('id');
+}
     </script>
 </head>
 
 <body>
 
-    <h1>Please enter your email address here</h1>
+    <h1 id="heading">Please enter your email address here for </h1>
     <div class="center"><input placeholder="Your email address" id="email"></div>
 
     <button class="center" onclick="sendJSON()">Submit</button>
