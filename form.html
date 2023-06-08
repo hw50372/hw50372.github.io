@@ -10,13 +10,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <script>
+        function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
 function sendJSON(){
               
             let email = document.querySelector('#email');
+            let header_id = findGetParameter("id");
               
             // Creating a XHR object
             let xhr = new XMLHttpRequest();
-            let url = "https://prod-08.uksouth.logic.azure.com:443/workflows/e355444b1d5f4112ba444c2a8248ff86/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rfBSgsHg5o_r54wZOEPEMHo2Ff1FqADiA7fy2Zs9Cd8&email="+email.value;
+            let url = "https://prod-08.uksouth.logic.azure.com:443/workflows/e355444b1d5f4112ba444c2a8248ff86/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rfBSgsHg5o_r54wZOEPEMHo2Ff1FqADiA7fy2Zs9Cd8&email="+email.value+"&hid="+header_id;
        
             // open a connection
             xhr.open("GET", url, true);
