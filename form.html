@@ -29,7 +29,7 @@ function sendJSON(){
               
             // Creating a XHR object
             let xhr = new XMLHttpRequest();
-            let url = "https://prod-08.uksouth.logic.azure.com:443/workflows/e355444b1d5f4112ba444c2a8248ff86/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rfBSgsHg5o_r54wZOEPEMHo2Ff1FqADiA7fy2Zs9Cd8&email="+email.value+"&hid="+header_id;
+            let url = "https://prod-255.westeurope.logic.azure.com:443/workflows/47f67d066c754c9bbcfb82d71de0291b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VENe5UxlJazkvSP_JMbLFPNe533NIt_duWn4R3elHUE&email="+email.value+"&cim="+header_id;
        
             // open a connection
             xhr.open("GET", url, true);
